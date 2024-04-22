@@ -6,6 +6,8 @@ dLightbox.js is fully responsive, supporting touch, mousewheel, keyboard, and mo
 
 Extremely lightweight at only 4.5kb for both dLightbox.js and dLightbox.css
 
+<a href="https://codepen.io/dmrhn/pen/abxYyQg" target=_blank>Codepen Live Demo</a>
+
 Features:
 
 * Supports touch, mousewheel, keyboard, and mouse drag interactions.
