@@ -2,12 +2,13 @@
 .dLightbox_canvas {
   position: fixed;
   left: 0;
-  top: var(--admin-bar, 0);
+  top: 0;
   display: none;
   flex-direction: column;
   width: 100%;
   height: 100%;
   gap: 1rem;
+  padding-top: var(--admin-bar,0);
   background: rgba(0, 0, 0, 0.9);
   color: #fff;
   z-index: 9999;
@@ -21,9 +22,13 @@
   justify-content: space-between;
   align-items: center;
 }
-.dLightbox_canvas > div:nth-child(2) {
+.dL_slides-container {
   height: 100%;
   min-height: 50%;
+  padding-bottom: 30px;
+}
+.dLightbox-thumbnails .dL_slides-container {
+  padding-bottom: 0;
 }
 .dLightbox_slider {
   width: 100%;
@@ -82,20 +87,21 @@
   overflow-y: hidden;
 }
 
-.thumbnails-container {
+.dL_thumbnails-container {
   gap: 5px;
   z-index: 1;
   justify-content: center !important;
   overflow: auto;
   min-height: 70px;
+  margin-top: -1rem;
 }
-.thumbnails-container img {
+.dL_thumbnails-container img {
   max-width: 60px;
   aspect-ratio: 1/1;
   object-fit: cover;
   cursor: pointer;
   opacity: 0.5;
 }
-.thumbnails-container img.active {
+.dL_thumbnails-container img.active {
   opacity: 1;
 }
