@@ -1,4 +1,4 @@
-// dLightbox V2
+// dLightbox v0.2
 document.addEventListener('DOMContentLoaded', function () {
     var current = null;
     var size;
