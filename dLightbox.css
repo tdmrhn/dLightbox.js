@@ -1,3 +1,4 @@
+/* dLightbox V2 */
 .dLightbox_canvas {
   position: fixed;
   left: 0;
@@ -20,9 +21,8 @@
   justify-content: space-between;
   align-items: center;
 }
-.dLightbox_canvas > div:last-child {
+.dLightbox_canvas > div:nth-child(2) {
   height: 100%;
-  max-height: 85%;
   min-height: 50%;
 }
 .dLightbox_slider {
@@ -80,4 +80,22 @@
 }
 .dL_noscroll {
   overflow-y: hidden;
+}
+
+.thumbnails-container {
+  gap: 5px;
+  z-index: 1;
+  justify-content: center !important;
+  overflow: auto;
+  min-height: 70px;
+}
+.thumbnails-container img {
+  max-width: 60px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.5;
+}
+.thumbnails-container img.active {
+  opacity: 1;
 }

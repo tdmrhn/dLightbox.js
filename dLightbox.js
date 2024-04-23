@@ -1,3 +1,4 @@
+// dLightbox V2
 document.addEventListener('DOMContentLoaded', function () {
     var current = null;
     var size;
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     dLightboxActions(uniqueId);
                 }
                 document.body.classList.add('dL_noscroll');
-                lightbox.classList.add('active'); // Adding active class instead of setting display: flex
+                lightbox.classList.add('active'); 
                 var link = e.target.closest('a');
                 if (link) {
                     var index = Array.from(gallery.querySelectorAll('a')).indexOf(link);
@@ -32,53 +33,105 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function dLightboxCreate(uniqueId) {
-        var lightbox = document.createElement('div');
-        lightbox.classList.add('dLightbox_canvas', 'active'); // Adding active class initially
-        lightbox.setAttribute('data-lightbox-id', uniqueId);
-        lightbox.innerHTML = '<div><div class="dL_count"></div><div class="dL_title"></div><div class="dL_close">&#x2715;</div></div><div><div class="dL_prev">&#8249;</div><div class="dLightbox_slider"><ul></ul></div><div class="dL_next">&#8250;</div></div>';
-        document.body.appendChild(lightbox);
-        document.querySelectorAll('[data-lightbox-id="' + uniqueId + '"] > figure > a').forEach(function (imgLink) {
-            var href = imgLink.getAttribute('href');
-            var imgContainer = document.createElement('li');
-            imgContainer.innerHTML = '<img src="' + href + '">';
-            lightbox.querySelector('.dLightbox_slider ul').appendChild(imgContainer);
+    var lightbox = document.createElement('div');
+    lightbox.classList.add('dLightbox_canvas', 'active');
+    lightbox.setAttribute('data-lightbox-id', uniqueId);
+    lightbox.innerHTML = `<div><div class="dL_count"></div><div class="dL_title"></div><div class="dL_close">&#x2715;</div></div><div><div class="dL_prev">&#8249;</div><div class="dLightbox_slider"><ul></ul></div><div class="dL_next">&#8250;</div></div>`;
+    document.body.appendChild(lightbox);
+    
+    var thumbnailsContainer = document.createElement('div');
+    thumbnailsContainer.classList.add('thumbnails-container'); 
+    
+    var slider = lightbox.querySelector('.dLightbox_slider ul');
+    var thumbnails = []; 
+
+    document.querySelectorAll('[data-lightbox-id="' + uniqueId + '"] > figure > a').forEach(function (imgLink, index) {
+        var href = imgLink.getAttribute('href');
+        
+        var imgContainer = document.createElement('li');
+        imgContainer.innerHTML = '<img src="' + href + '">'; 
+        
+        var thumbnail = document.createElement('img');
+        thumbnail.src = href; 
+        
+        thumbnail.addEventListener('click', function() {
+            thumbnails.forEach(function(thumb) {
+                thumb.classList.remove('active');
+            });
+            thumbnail.classList.add('active');
+            
+            slider.style.transform = 'translateX(-' + index * 100 + '%)';
         });
-        return lightbox;
+        
+        thumbnails.push(thumbnail);
+        thumbnailsContainer.appendChild(thumbnail);
+        lightbox.appendChild(thumbnailsContainer);
+        
+        slider.appendChild(imgContainer);
+    });
+    
+    function updateActiveThumbnail() {
+        var currentIndex = Math.round(slider.scrollLeft / slider.clientWidth);
+        
+        thumbnails.forEach(function(thumb) {
+            thumb.classList.remove('active');
+        });
+        
+        thumbnails[currentIndex].classList.add('active');
     }
+    
+    lightbox.querySelector('.dLightbox_slider').addEventListener('scroll', updateActiveThumbnail);
+    
+    updateActiveThumbnail();
+    
+    return lightbox;
+}
+
 
     function dLightboxSlide(uniqueId, index, direction) {
-        current = index;
-        var counter = index + 1;
-        size = document.querySelectorAll('[data-lightbox-id="' + uniqueId + '"] .dLightbox_slider ul > li').length;
-        var lightbox = document.querySelector('.dLightbox_canvas[data-lightbox-id="' + uniqueId + '"]');
-        var slideContainer = lightbox.querySelector('.dLightbox_slider ul');
-        if (slideContainer) {
-            var moveDistance = -(current * 100);
-            slideContainer.style.transform = 'translateX(' + moveDistance + '%)';
-            var figures = document.querySelectorAll('[data-lightbox-id="' + uniqueId + '"] > figure');
-            if (index < figures.length) {
-                var figcaptionElement = figures[index].querySelector('figcaption');
-                var figcaption = figcaptionElement ? figcaptionElement.textContent : '';
-                var imgElement = figures[index].querySelector('img');
-                var alt = imgElement ? imgElement.getAttribute('alt') : '';
-                lightbox.querySelector('.dL_count').innerHTML = counter + '/' + size;
-                lightbox.querySelector('.dL_title').innerHTML = figcaption || alt;
-            }
+    current = index;
+    var counter = index + 1;
+    size = document.querySelectorAll('[data-lightbox-id="' + uniqueId + '"] .dLightbox_slider ul > li').length;
+    var lightbox = document.querySelector('.dLightbox_canvas[data-lightbox-id="' + uniqueId + '"]');
+    var slideContainer = lightbox.querySelector('.dLightbox_slider ul');
+    var thumbnails = document.querySelectorAll('.dLightbox_canvas.active[data-lightbox-id="' + uniqueId + '"] .thumbnails-container img');
+    
+    if (slideContainer) {
+        var moveDistance = -(current * 100);
+        slideContainer.style.transform = 'translateX(' + moveDistance + '%)';
+        var figures = document.querySelectorAll('[data-lightbox-id="' + uniqueId + '"] > figure');
+        if (index < figures.length) {
+            var figcaptionElement = figures[index].querySelector('figcaption');
+            var figcaption = figcaptionElement ? figcaptionElement.textContent : '';
+            var imgElement = figures[index].querySelector('img');
+            var alt = imgElement ? imgElement.getAttribute('alt') : '';
+            lightbox.querySelector('.dL_count').innerHTML = counter + '/' + size;
+            lightbox.querySelector('.dL_title').innerHTML = figcaption || alt;
         }
     }
+    thumbnails.forEach(function(thumb) {
+        thumb.classList.remove('active');
+    });
+    thumbnails[index].classList.add('active');
+}
+
 
     function dLightboxMove(uniqueId, direction) {
-        var dest;
-        var lightbox = document.querySelector('.dLightbox_canvas.active[data-lightbox-id="' + uniqueId + '"]');
-        if (direction === 'prev') dest = current - 1 < 0 ? size - 1 : current - 1;
-        else if (direction === 'next') dest = (current + 1) % size;
-        dLightboxSlide(uniqueId, dest);
-    }
+    var dest;
+    var lightbox = document.querySelector('.dLightbox_canvas.active[data-lightbox-id="' + uniqueId + '"]');
+    var currentSlide = current;
+
+    if (direction === 'prev') dest = currentSlide - 1 < 0 ? size - 1 : currentSlide - 1;
+    else if (direction === 'next') dest = (currentSlide + 1) % size;
+
+    dLightboxSlide(uniqueId, dest);
+}
+
     
     function dLightboxClose(uniqueId) {
         var lightbox = document.querySelector('.dLightbox_canvas.active[data-lightbox-id="' + uniqueId + '"]');
         if (lightbox) {
-            lightbox.classList.remove('active'); // Removing active class to hide the lightbox
+            lightbox.classList.remove('active');
             document.body.classList.remove('dL_noscroll');
         }
     }   
