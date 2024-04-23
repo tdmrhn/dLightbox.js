@@ -2,17 +2,21 @@
 
 Extremely lightweight yet powerful and touch-friendly, jQuery-free Lightbox. dLightbox.js is custom coded from scratch, ensuring efficient performance and compatibility with modern web development practices.
 
-dLightbox.js is fully responsive, supporting touch, mousewheel, keyboard, and mouse drag interactions, as well as slide counters and figcaption. dLightbox.js ensures optimal viewing experiences across all devices.
+dLightbox.js is fully responsive, supporting touch, mousewheel, keyboard, and mouse drag interactions, build-in thumbnails, as well as slide counters and figcaption. dLightbox.js ensures optimal viewing experiences across all devices.
 
 Extremely lightweight at only 4.5kb for both dLightbox.js and dLightbox.css
 
-<a href="https://codepen.io/dmrhn/pen/abxYyQg" target=_blank>Codepen Live Demo</a>
+<a href="https://codepen.io/dmrhn/pen/abxYyQg" target=_blank>Codepen Live Demo - V1</a>
+<a href="https://codepen.io/dmrhn/pen/KKYbGXK" target=_blank>Codepen Live Demo - V2</a>
+
 
 Features:
 
 * Supports touch, mousewheel, keyboard, and mouse drag interactions.
 * Slide counter and figcaption support.
-* jQuery-Free, lightweight at only 4.5kb (2kb gzipped) for both dLightbox.js and dLightbox.css
+* Thumbnail support.
+* Easy customizations via CSS flex.
+* jQuery-Free, lightweight at only 5.5kb (2.15kb gzipped) for both dLightbox.js and dLightbox.css
 * Fully responsive.
 
 == Installation ==
@@ -24,6 +28,10 @@ Download dLightbox.js and dLightbox.css and use dLightbox class for the gallerie
 = Is it mobile touch friendly? =
 
 dLightbox.js supports touch, mousewheel, keyboard, and mouse drag interactions.
+
+= Is it supports thumbnails? =
+
+Yes it supports thumbnails. Thumbnails can be easily positioned via CSS according to your needs.
 
 = Is the lightbox responsive? =
 
@@ -38,6 +46,9 @@ No, there is no dependency on jQuery. dLightbox is custom coded from scratch, en
 Extremely lightweight at only 4.5kb (2kb gzipped) for both dLightbox.js and dLightbox.css
 
 == Changelog ==
+
+= 0.2 =
+* Added Dynamic Thumbnails
 
 = 0.1 =
 * Initial release
