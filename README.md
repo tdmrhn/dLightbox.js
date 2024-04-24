@@ -13,7 +13,7 @@ Extremely lightweight at only 2.5kb gzipped for both dLightbox.js and dLightbox.
 
 Features:
 
-* Supports touch, mousewheel, keyboard, and mouse drag interactions.
+* Supports touch, mousewheel, keyboard, double click zoom and mouse drag interactions.
 * Slide counter and figcaption support.
 * Thumbnail support.
 * Easy customizations via CSS flex.
