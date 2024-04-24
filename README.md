@@ -2,7 +2,7 @@
 
 Extremely lightweight yet powerful and touch-friendly, jQuery-free Lightbox. dLightbox.js is custom coded from scratch, ensuring efficient performance and compatibility with modern web development practices.
 
-dLightbox.js is fully responsive, supporting touch, mousewheel, keyboard, and mouse drag interactions, build-in thumbnails, as well as slide counters and figcaption. dLightbox.js ensures optimal viewing experiences across all devices.
+dLightbox.js is fully responsive, supporting touch, mousewheel, keyboard, double click zoom and mouse drag interactions, build-in thumbnails, as well as slide counters and figcaption. dLightbox.js ensures optimal viewing experiences across all devices.
 
 Extremely lightweight at only 2.5kb gzipped for both dLightbox.js and dLightbox.css
 
@@ -10,43 +10,56 @@ Extremely lightweight at only 2.5kb gzipped for both dLightbox.js and dLightbox.
 
 <a href="https://codepen.io/dmrhn/pen/KKYbGXK" target=_blank>Codepen Live Demo - v0.3</a>
 
+<img src="https://i.imgur.com/Djj1nv7.png">
 
-Features:
 
+
+# Features:
+
+* Class based no js fuss
 * Supports touch, mousewheel, keyboard, double click zoom and mouse drag interactions.
-* Slide counter and figcaption support.
-* Thumbnail support.
+* Slide counter and figcaption support (class -> dLightbox-captions).
+* Thumbnail support (class -> dLightbox-thumbnails).
 * Easy customizations via CSS flex.
 * jQuery-Free, lightweight at only 2.5kb gzipped for both dLightbox.js and dLightbox.css
 * Fully responsive.
 
-== Installation ==
+# Installation
 
 Download dLightbox.js and dLightbox.css and use dLightbox class for the galleries you want to enable lightbox feature.
+Example HTML markup:
 
-== Frequently Asked Questions ==
+```
+<div class="dLightbox dLightbox-thumbnails dLightbox-captions">
+  <figure><a href="imgurl"><img src="imgurl" alt="Image"></a>
+    <figcaption>Title</figcaption>
+  </figure>
+</div>
+```
 
-= Is it mobile touch friendly? =
+# Frequently Asked Questions
+
+* Is it mobile touch friendly? 
 
 dLightbox.js supports touch, mousewheel, keyboard, and mouse drag interactions.
 
-= Is it supports thumbnails? =
+* Is it supports thumbnails?
 
 Yes it supports thumbnails with "dLightbox-thumbnails" class like Codepen demo. Also thumbnails can be easily positioned via CSS according to your needs.
 
-= Is the lightbox responsive? =
+* Is the lightbox responsive?
 
 Yes, the lightbox feature provided by Gallery Lightbox is fully responsive, ensuring optimal viewing experiences across all devices.
 
-= Does it need jQuery? =
+* Does it need jQuery?
 
 No, there is no dependency on jQuery. dLightbox is custom coded from scratch, ensuring efficient performance and compatibility with modern web development practices.
 
-= Does the plugin impact page loading speed? =
+* Does the plugin impact page loading speed?
 
 Extremely lightweight at only 2.5kb gzipped for both dLightbox.js and dLightbox.css
 
-== Changelog ==
+# Changelog
 
 = 0.3 =
 * Added Zoom to original image size on double click
