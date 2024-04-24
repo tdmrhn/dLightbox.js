@@ -16,7 +16,7 @@ Extremely lightweight at only 2.5kb gzipped for both dLightbox.js and dLightbox.
 
 # Features:
 
-* Class based no js fuss
+* Class based module controls, no js fuss
 * Supports touch, mousewheel, keyboard, double click zoom and mouse drag interactions.
 * Slide counter and figcaption support (class -> dLightbox-captions).
 * Thumbnail support (class -> dLightbox-thumbnails).
