@@ -1,4 +1,9 @@
-/* dLightbox v0.2 */
+/*
+ * dLightbox.js
+ * @author  dmrhn
+ * @version 0.3
+ * @url https://github.com/tdmrhn/dLightbox.js
+ */
 .dLightbox_canvas {
   position: fixed;
   left: 0;
@@ -51,8 +56,17 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  pointer-events: none;
   user-select: none;
+  pointer-events: none;
+  object-position: center;
+}
+.dLightbox_slider ul li.zoomed {
+  cursor: zoom-in;
+}
+.dLightbox_slider ul li.zoomed img {
+  object-fit: cover;
+  object-position: center;
+  height: auto;
 }
 .dL_count,
 .dL_close,
