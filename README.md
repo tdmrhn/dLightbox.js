@@ -6,11 +6,11 @@ dLightbox.js is fully responsive, supporting touch, mousewheel, keyboard, double
 
 Extremely lightweight at only 2.75kb gzipped for both dLightbox.js and dLightbox.css
 
-<a href="https://codepen.io/dmrhn/pen/abxYyQg" target=_blank>Codepen Live Demo - v0.1</a>
+<a href="https://codepen.io/dmrhn/pen/mdgZNNZ" target=_blank>Codepen Live Demo - v0.4</a>
 
 <a href="https://codepen.io/dmrhn/pen/KKYbGXK" target=_blank>Codepen Live Demo - v0.3</a>
 
-<a href="https://codepen.io/dmrhn/pen/mdgZNNZ" target=_blank>Codepen Live Demo - v0.4</a>
+<a href="https://codepen.io/dmrhn/pen/abxYyQg" target=_blank>Codepen Live Demo - v0.1</a>
 
 <img src="https://i.imgur.com/Djj1nv7.png">
 
