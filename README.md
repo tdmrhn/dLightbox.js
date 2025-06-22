@@ -4,7 +4,10 @@ Extremely lightweight yet powerful and touch-friendly, jQuery-free Lightbox. dLi
 
 dLightbox.js is fully responsive, supporting touch, mousewheel, keyboard, double click zoom and mouse drag interactions, build-in thumbnails, as well as slide counters and figcaption. dLightbox.js ensures optimal viewing experiences across all devices.
 
-Extremely lightweight at only 2.75kb gzipped for both dLightbox.js and dLightbox.css
+Extremely lightweight at only 2.85kb gzipped for both dLightbox.js and dLightbox.css
+
+
+<a href="https://codepen.io/dmrhn/pen/vEOQxbL" target=_blank>Codepen Live Demo - v0.5</a>
 
 <a href="https://codepen.io/dmrhn/pen/mdgZNNZ" target=_blank>Codepen Live Demo - v0.4</a>
 
@@ -62,6 +65,10 @@ No, there is no dependency on jQuery. dLightbox is custom coded from scratch, en
 Extremely lightweight at only 2.75kb gzipped for both dLightbox.js and dLightbox.css
 
 # Changelog
+
+= 0.5 =
+* Improved js code
+* Added auto carousel to thumbnails container if wider than viewport
 
 = 0.4 =
 * Improved double click to zoom
