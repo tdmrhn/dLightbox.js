@@ -1,7 +1,7 @@
 /*
  * dLightbox.js
  * @author  dmrhn
- * @version 0.4
+ * @version 0.5
  * @url https://github.com/tdmrhn/dLightbox.js
  */
 .dLightbox_canvas {
@@ -107,26 +107,40 @@
   overflow-y: hidden;
 }
 
-.dL_thumbnails-container {
-  gap: 5px;
-  z-index: 1;
-  justify-content: center !important;
-  overflow: auto;
-  min-height: 70px;
-  margin-top: -1rem;
+/* Style for thumbnails */
+.dL_thumbnail-carousel {
+  max-width: 90vw;
+  z-index: 1;  
+  margin: 0px auto;
+  min-height: 75px;
+  overflow: hidden;
+  display: flex;
 }
+
+.dL_thumbnails-container {
+  display: flex;
+  gap: 5px;
+  transition: transform 0.3s ease;
+  min-width: max-content;
+  margin: 0 auto;
+}
+
+
 .dL_thumbnails-container img {
   max-width: 60px;
+  max-height: 60px;
   aspect-ratio: 1/1;
   object-fit: cover;
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.4;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
 }
+
+.dL_thumbnails-container img:hover,
 .dL_thumbnails-container img.active {
   opacity: 1;
-}
-@media screen and (max-width: 700px) {
-  .dL_thumbnails-container {
-    justify-content: flex-start !important;
-  }
+  border: 2px solid #fff;
 }
