@@ -112,11 +112,11 @@
   max-width: 90vw;
   z-index: 1;  
   margin: 0px auto;
-  min-height: 75px;
+  min-height: 70px;
   overflow: hidden;
   display: flex;
+  margin-top: -1rem;
 }
-
 .dL_thumbnails-container {
   display: flex;
   gap: 5px;
@@ -124,8 +124,6 @@
   min-width: max-content;
   margin: 0 auto;
 }
-
-
 .dL_thumbnails-container img {
   max-width: 60px;
   max-height: 60px;
@@ -133,14 +131,9 @@
   object-fit: cover;
   cursor: pointer;
   opacity: 0.4;
-  border: 2px solid transparent;
-  border-radius: 4px;
   transition: all 0.3s ease;
-  flex-shrink: 0;
 }
-
 .dL_thumbnails-container img:hover,
 .dL_thumbnails-container img.active {
   opacity: 1;
-  border: 2px solid #fff;
 }
