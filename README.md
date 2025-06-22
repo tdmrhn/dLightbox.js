@@ -26,7 +26,7 @@ Extremely lightweight at only 2.85kb gzipped for both dLightbox.js and dLightbox
 * Slide counter and figcaption support (class -> dLightbox-captions).
 * Thumbnail support (class -> dLightbox-thumbnails).
 * Easy customizations via CSS flex.
-* jQuery-Free, lightweight at only 2.75kb gzipped for both dLightbox.js and dLightbox.css
+* jQuery-Free, lightweight at only 2.85kb gzipped for both dLightbox.js and dLightbox.css
 * Fully responsive.
 
 # Installation
