@@ -36,7 +36,7 @@ Download dLightbox.js and dLightbox.css and use dLightbox class for the gallerie
 Example HTML markup:
 
 ```
-<div class="dLightbox dLightbox-thumbnails dLightbox-captions">
+<div class="dhn-lightbox dLightbox-thumbnails dLightbox-captions">
   <figure><a href="imgurl"><img src="imgurl" alt="Image"></a>
     <figcaption>Title</figcaption>
   </figure>
